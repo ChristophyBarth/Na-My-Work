@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/soft_skill"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/soft_skill_item_background"
+    android:paddingHorizontal="25dp"
+    android:paddingVertical="15dp"
+    tools:text="Team Work"
+    android:textSize="15sp" />
