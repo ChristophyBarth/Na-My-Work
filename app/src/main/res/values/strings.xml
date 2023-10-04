@@ -67,6 +67,12 @@
     <string name="create_password">Create Password</string>
     <string name="reset_password_successfully">Reset Password Successfully</string>
     <string name="login_account">Login Account</string>
+    <string name="delete_prompt_list">
+        \n <li>Delete your account from Na-My-Work</li>
+        \n <li>Delete all your data from Na-My-Work</li>
+        \n <li>Erase all your message history.</li>
+    </string>
+    <string name="to_delete_acct">To delete your account enter your Email address and password</string>
 
 
 </resources>
