@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".onboarding.onboardingScreens.FirstFragment">
+    tools:context=".ui.onboarding.FirstFragment">
 
     <TextView
         android:id="@+id/button"

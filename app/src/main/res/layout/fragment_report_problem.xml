@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.ReportProblemFragment">
+    tools:context=".ui.report_problem.ReportProblemFragment">
 
     <ImageView
         android:id="@+id/back_image_view"
@@ -38,7 +38,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:gravity="top||start"
+        android:gravity="top|start"
         app:boxStrokeColor="@color/black"
         app:boxStrokeWidth="3dp"
         android:hint="Tell us about the problem you are experiencing"
