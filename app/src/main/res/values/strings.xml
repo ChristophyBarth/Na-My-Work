@@ -5,8 +5,11 @@
     <string name="send_a_message">Send a message</string>
     <string name="personal_information">Personal Information</string>
     <string name="full_name">Full Name:</string>
+    <string name="full_namee">Full Name <font color="#F1214A">*</font></string>
     <string name="email_address">Email Address:</string>
+    <string name="email_addresss">Email Address <font color="#F1214A">*</font></string>
     <string name="date_of_birth">Date Of Birth:</string>
+    <string name="date_of_birthh">Date Of Birth <font color="#F1214A">*</font></string>
     <string name="country_of_residence">Country of Residence:</string>
     <string name="state_city_of_residence">State/City of Residence:</string>
     <string name="phone_number">Phone Number:</string>
@@ -73,6 +76,60 @@
         \n <li>Erase all your message history.</li>
     </string>
     <string name="to_delete_acct">To delete your account enter your Email address and password</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="services">Services</string>
+    <string name="messages">Messages</string>
+    <string name="profile">Profile</string>
+    <string name="currency">Currency</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="input_old_password">Input old password</string>
+    <string name="old_password">Old password</string>
+    <string name="change_password">Change password</string>
+    <string name="back_button">Back button</string>
+    <string name="new_password">New password</string>
+    <string name="all_devices_will_be_required_to_sign_in_with_new_password">All devices will be required to sign in with new password</string>
+    <string name="see_all">See All</string>
+    <string name="popular_services">Popular services</string>
+    <string name="discover_service_providers">Discover service providers</string>
+    <string name="filter">Filter</string>
+    <string name="explore_awesome_professional_services">Explore awesome professional services</string>
+    <string name="view_profile">View profile</string>
+    <string name="write_a_short_brief_about_yourself_and_your_working_experience">Write a short brief about yourself and your working experience</string>
+    <string name="save_continue"><![CDATA[Save & Continue]]></string>
+    <string name="enter_your_country_of_residence">Enter your country of residence</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="enter_full_legal_name">Enter full legal name</string>
+    <string name="phone_numberr">Phone number <font color="#F1214A">*</font></string>
+    <string name="dd_mm_yy">DD/MM/YY</string>
+    <string name="enter_state_of_residence">Enter state of residence</string>
+    <string name="about_me">About me</string>
+    <string name="make_sure_you_make_yourself_more_attractive_and_professional_to_attract_suitable_clients_keep_it_short_and_simple_not_more_than_2000_words">(Make sure you make yourself more attractive and professional to attract suitable clients. Keep it short and simple). Not more than 2000 words</string>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="position">Position</string>
+    <string name="enter_your_employer_s_name">Enter your employer’s name</string>
+    <string name="company_name">Company name</string>
+    <string name="enter_your_work_experience_ascendingly_starting_from_your_recent_experience">Enter your work experience ascendingly, starting from your recent experience.</string>
+    <string name="file_size_should_not_be_more_than_2mb">*File size should not be more than 2mb</string>
+    <string name="file_format_pdf_or_doc_or_docx">File format: .PDF or .DOC Or .DOCX</string>
+    <string name="upload_resume_cv">Upload Resume/CV</string>
+    <string name="you_can_upload_resume_to_automatically_fill_your_work_experience">You can upload resume to automatically fill your work experience</string>
+    <string name="what_do_you_do">What do you do?</string>
+    <string name="upload_resume">Upload Resume</string>
+    <string name="work_description">Work description</string>
+    <string name="add_another_experience">Add another experience</string>
+    <string name="you_can_upload_up_to_10_medias_including_videos_and_images">You can upload up to 10 medias. Including Videos and images</string>
+    <string name="media">Media</string>
+    <string name="portfolio_link">Portfolio link</string>
+    <string name="input_the_link_to_your_portfolio">Input the link to your portfolio</string>
+    <string name="soft_skills">Soft skills</string>
+    <string name="you_can_add_up_to_10_soft_skills">You can add up to 10 soft skills</string>
+    <string name="collaboration">+ Collaboration</string>
+    <string name="communication">+ Communication</string>
+    <string name="attention_to_details">+ Attention to details</string>
+    <string name="team_work">+ Team work</string>
+    <string name="fast_learners">+ Fast Learners</string>
 
 
 </resources>

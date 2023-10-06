@@ -7,6 +7,10 @@
     <color name="light_green">#96BE98</color>
     <color name="super_light_green">#D5E5D6</color>
     <color name="light_ash">#A2A7A3</color>
+    <color name="grey_500">#A7A7A7</color>
     <color name="red">#F1214A</color>
     <color name="white_shade">#D4D4D4</color>
+    <color name="grey">#F1F1F1</color>
+    <color name="grey_200">#BCBCBC</color>
+    <color name="greeney">#142E7D32</color>
 </resources>
