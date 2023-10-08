@@ -5,7 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="170dp"
-        android:layout_height="120dp">
+        android:layout_height="120dp"
+        android:layout_margin="10dp">
 
         <ImageView
             android:id="@+id/category_image"
@@ -13,6 +14,7 @@
             android:layout_height="120dp"
             android:background="@drawable/category_item_img_background"
             android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/category"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

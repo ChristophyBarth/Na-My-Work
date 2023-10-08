@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="kodecamp.android.na_my_work.ui.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment2_to_categoriesFragment2"
+            app:destination="@id/categoriesFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment2"
+        android:name="kodecamp.android.na_my_work.ui.fragments.category.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment2_to_categoryInfoFragment"
+            app:destination="@id/categoryInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="kodecamp.android.na_my_work.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment2_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_profileSetupFragment2"
+            app:destination="@id/profileSetupFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationsSettingsFragment"
+            app:destination="@id/notificationsSettingsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_twoStepFragment"
+            app:destination="@id/twoStepFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_reportProblemFragment2"
+            app:destination="@id/reportProblemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsSettingsFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.notification.NotificationsSettingsFragment"
+        android:label="fragment_notifications_settings"
+        tools:layout="@layout/fragment_notifications_settings" />
+    <fragment
+        android:id="@+id/reportProblemFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.report_problem.ReportProblemFragment"
+        tools:layout="@layout/fragment_report_problem"
+        android:label="ReportProblemFragment" />
+    <fragment
+        android:id="@+id/currencyFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.currency.CurrencyFragment"
+        android:label="fragment_currency"
+        tools:layout="@layout/fragment_currency" />
+    <fragment
+        android:id="@+id/twoStepFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.two_step_verification.TwoStepFragment"
+        android:label="TwoStepFragment"
+        tools:layout="@layout/fragment_two_step"/>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.profile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/categoryInfoFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.category.CategoryInfoFragment"
+        android:label="CategoryInfoFragment"
+        tools:layout="@layout/fragment_category_info">
+        <action
+            android:id="@+id/action_categoryInfoFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.profile.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="kodecamp.android.na_my_work.ui.fragments.password.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/profileSetupFragment2"
+        android:name="kodecamp.android.na_my_work.ui.fragments.profile.ProfileSetupFragment"
+        android:label="fragment_profile_setup"
+        tools:layout="@layout/fragment_profile_setup" />
+</navigation>

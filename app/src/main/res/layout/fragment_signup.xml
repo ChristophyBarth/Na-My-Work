@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingStart="24dp"
     android:paddingEnd="24dp"
-    tools:context=".ui.signup.SignupFragment">
+    tools:context=".ui.fragments.signup.SignupFragment">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -199,7 +199,7 @@
 
 
     <Button
-        android:id="@+id/btnCreatAcct"
+        android:id="@+id/btn_create_acct"
         style="@style/ButtonGrey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -225,7 +225,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreatAcct" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_create_acct" />
 
     <TextView
         android:id="@+id/tvText"
@@ -240,6 +240,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvText1" />
 
     <TextView
+        android:id="@+id/tv_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

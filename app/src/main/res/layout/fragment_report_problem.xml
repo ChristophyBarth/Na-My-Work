@@ -4,79 +4,117 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.report_problem.ReportProblemFragment">
+    tools:context=".ui.fragments.report_problem.ReportProblemFragment">
 
-    <ImageView
-        android:id="@+id/back_image_view"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/baseline_arrow_back"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStart="0dp">
 
-    <TextView
-        android:id="@+id/tv_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Report a Problem"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/green"
-        app:layout_constraintBottom_toBottomOf="@+id/back_image_view"
-        app:layout_constraintStart_toEndOf="@+id/back_image_view"
-        app:layout_constraintTop_toTopOf="@+id/back_image_view" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            >
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/back_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_arrow_back" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans_semibold"
+                android:text="@string/report_a_problem"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/text_il"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="top|start"
         app:boxStrokeColor="@color/black"
-        app:boxStrokeWidth="3dp"
-        android:hint="Tell us about the problem you are experiencing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_image_view">
+        app:boxStrokeWidth="2dp"
+        android:hint="@string/tell_us_about_the_problem_you_are_experiencing"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/problem_description"
             android:layout_width="match_parent"
-            android:gravity="top"
-            android:layout_height="200dp"
-            android:inputType="text"
+            android:gravity="top|start"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
              />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_info"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="include device information? (optional)"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/include_device_information_optional"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/text_il" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/technical_info_text"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layoutDirection="rtl"
-        android:text="Technical details like your model and settings can help \n us answer your questions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/technical_info_checkbox"
+        android:text="@string/technical_details_like_your_model_and_settings_can_help_us_answer_your_questions"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/technical_info_checkbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/technical_info_text"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintTop_toTopOf="@+id/tv_info"
+        />
 
     <TextView
         android:id="@+id/tv_respond_to_email"
@@ -84,17 +122,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="We will respond to you via email"
+        android:text="@string/we_will_respond_to_you_via_email"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        app:layout_constraintTop_toBottomOf="@+id/technical_info_text" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Send"
+        android:text="@string/send"
         app:cornerRadius="8dp"
         app:shapeAppearance="@style/ThemeOverlay.Material3.Button"
         app:layout_constraintBottom_toBottomOf="@+id/tv_respond_to_email"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.MediaFragment">
+    tools:context=".ui.fragments.profile.MediaFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline"
@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_upload"
+        android:contentDescription="@string/upload_icon"
         app:layout_constraintEnd_toStartOf="@id/endGuideline"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
         app:layout_constraintTop_toTopOf="@id/view" />
@@ -88,7 +89,8 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@id/endGuideline"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintTop_toBottomOf="@id/uploadResumeText3" />
+        app:layout_constraintTop_toBottomOf="@id/uploadResumeText3"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/uploadResumeText5"
