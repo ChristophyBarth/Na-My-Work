@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.profile.ProfileBioDataFragment">
+    tools:context=".ui.fragments.profile.ProfileBioDataFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:contentDescription="@string/user_profile_picture"
             android:src="@drawable/ic_profile_placeholder"
             app:layout_constraintEnd_toStartOf="@id/endGuideline"
             app:layout_constraintStart_toStartOf="@id/startGuideline"
@@ -26,6 +27,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/icons_background"
             android:padding="8dp"
+            android:contentDescription="@string/add_photo_button"
             app:layout_constraintBottom_toBottomOf="@id/profileImage"
             app:layout_constraintEnd_toEndOf="@id/profileImage"
             app:layout_constraintHorizontal_bias="0.9"
@@ -281,7 +283,8 @@
             android:text="@string/make_sure_you_make_yourself_more_attractive_and_professional_to_attract_suitable_clients_keep_it_short_and_simple_not_more_than_2000_words"
             app:layout_constraintTop_toBottomOf="@id/aboutMeText"
             app:layout_constraintStart_toStartOf="@id/startGuideline"
-            app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            tools:ignore="SmallSp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/aboutMeContainer"
@@ -310,7 +313,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveButton"
+            android:id="@+id/save_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
