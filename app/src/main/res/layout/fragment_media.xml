@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.profile.MediaFragment">
+    tools:context=".ui.ui.profile.MediaFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline"

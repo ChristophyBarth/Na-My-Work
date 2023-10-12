@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="kodecamp.android.na_my_work.ui.fragments.home.HomeFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment2"
-        android:name="kodecamp.android.na_my_work.ui.fragments.category.CategoriesFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.category.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment2"
-        android:name="kodecamp.android.na_my_work.ui.fragments.profile.ProfileFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.settings.SettingsFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings">
         <action
@@ -58,32 +58,32 @@
     </fragment>
     <fragment
         android:id="@+id/notificationsSettingsFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.notification.NotificationsSettingsFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.notification.NotificationsSettingsFragment"
         android:label="fragment_notifications_settings"
         tools:layout="@layout/fragment_notifications_settings" />
     <fragment
         android:id="@+id/reportProblemFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.report_problem.ReportProblemFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.report_problem.ReportProblemFragment"
         tools:layout="@layout/fragment_report_problem"
         android:label="ReportProblemFragment" />
     <fragment
         android:id="@+id/currencyFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.currency.CurrencyFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.currency.CurrencyFragment"
         android:label="fragment_currency"
         tools:layout="@layout/fragment_currency" />
     <fragment
         android:id="@+id/twoStepFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.two_step_verification.TwoStepFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.two_step_verification.TwoStepFragment"
         android:label="TwoStepFragment"
         tools:layout="@layout/fragment_two_step"/>
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.profile.UserProfileFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.profile.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
     <fragment
         android:id="@+id/categoryInfoFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.category.CategoryInfoFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.category.CategoryInfoFragment"
         android:label="CategoryInfoFragment"
         tools:layout="@layout/fragment_category_info">
         <action
@@ -92,17 +92,17 @@
     </fragment>
     <fragment
         android:id="@+id/deleteFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.profile.DeleteFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.profile.DeleteFragment"
         android:label="fragment_delete"
         tools:layout="@layout/fragment_delete" />
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.password.ChangePasswordFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.password.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/profileSetupFragment2"
-        android:name="kodecamp.android.na_my_work.ui.fragments.profile.ProfileSetupFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.profile.ProfileSetupFragment"
         android:label="fragment_profile_setup"
         tools:layout="@layout/fragment_profile_setup" />
 </navigation>

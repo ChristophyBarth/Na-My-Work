@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.onboarding.SplashScreenFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.onboardingScreens.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.onboarding.FirstFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.onboardingScreens.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first">
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.onboarding.SecondFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.onboardingScreens.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.onboarding.ThirdFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.onboardingScreens.ThirdFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third">
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboardFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.onboarding.OnboardFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.onboardingScreens.OnboardFragment"
         android:label="fragment_onboard"
         tools:layout="@layout/fragment_onboard">
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.login.LoginFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.signup.SignupFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.onboarding.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup">
         <action
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.password.ForgotPasswordFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.password.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password">
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.password.ResetPasswordFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.password.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password">
         <action
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/completeResetPasswordFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.password.CompleteResetPasswordFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.password.CompleteResetPasswordFragment"
         android:label="fragment_complete_reset_password"
         tools:layout="@layout/fragment_complete_reset_password">
         <action
@@ -119,7 +119,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileSetupFragment"
-        android:name="kodecamp.android.na_my_work.ui.fragments.profile.ProfileSetupFragment"
+        android:name="kodecamp.android.na_my_work.ui.ui.profile.ProfileSetupFragment"
         android:label="fragment_profile_setup"
         tools:layout="@layout/fragment_profile_setup" />
     <activity

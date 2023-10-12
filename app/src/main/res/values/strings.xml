@@ -177,6 +177,7 @@
     <string name="upload_icon">Upload Icon</string>
     <string name="notification">Notification</string>
     <string name="add_photo_button">Add Photo Button</string>
+    <string name="naming_pattern_is_incorrect">Naming pattern is incorrect</string>
 
 
 </resources>
