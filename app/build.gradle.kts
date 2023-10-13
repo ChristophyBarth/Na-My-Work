@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-//    id("dagger.hilt.android.plugin")
 //    id("com.google.devtools.ksp")
 }
 
@@ -63,6 +62,18 @@ dependencies {
     //Room
     implementation("androidx.room:room-ktx:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
+
+    implementation("com.google.code.gson:gson:2.9.0")
+
+    implementation("com.squareup.moshi:moshi:1.14.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 }
 kapt {
     correctErrorTypes = true
