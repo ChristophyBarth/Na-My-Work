@@ -8,13 +8,18 @@ class UserRepositoryImpl @Inject constructor(
     private val userDao: UserDao
 ) : UserRepository {
     override suspend fun getUser(email: String, password: String): UserEntity? {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun getUserByEmail(email: String, password: String): UserEntity? {
         val user = userDao.getUserByEmail(email)
         return if (user != null && user.password == password) user else null
     }
+
+    override suspend fun getUserByEmail(email: String): UserEntity? {
+        return userDao.getUserByEmail(email)
+    }
+
+    override suspend fun getUserByID(id: Int): UserEntity? {
+        return userDao.getUserById(id)
+    }
+
     override suspend fun saveUser(userEntity: UserEntity) {
         userDao.saveUser(userEntity)
     }
