@@ -1,5 +1,6 @@
 package kodecamp.android.na_my_work.ui.ui.onboarding
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,6 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import kodecamp.android.na_my_work.R
 import kodecamp.android.na_my_work.databinding.FragmentLoginBinding
+import kodecamp.android.na_my_work.ui.utils.Object
+import kodecamp.android.na_my_work.ui.utils.Object.USER_PREF_NAME
+import kodecamp.android.na_my_work.ui.utils.Object.USER_PRIMARY_KEY
 import kodecamp.android.na_my_work.ui.utils.Resource
 class LoginFragment : Fragment() {
 
@@ -58,6 +62,14 @@ class LoginFragment : Fragment() {
         viewModel.loginState.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Success -> {
+                    Object.user = response.data
+                    Object.primaryKey = response.data!!.userId
+
+                   requireContext().getSharedPreferences(USER_PREF_NAME, Context.MODE_PRIVATE).edit().run {
+                        putInt(USER_PRIMARY_KEY, response.data.userId)
+                        apply()
+                    }
+
                     findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
                     activity?.finish()
                 }

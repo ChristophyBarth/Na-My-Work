@@ -1,13 +1,15 @@
 package kodecamp.android.na_my_work.ui.ui.profile
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kodecamp.android.na_my_work.R
 import kodecamp.android.na_my_work.databinding.FragmentProfileBinding
+import kodecamp.android.na_my_work.ui.utils.Object
 
 
 class ProfileFragment : Fragment() {
@@ -15,8 +17,7 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
@@ -31,6 +32,16 @@ class ProfileFragment : Fragment() {
             }
             settings.setOnClickListener {
                 findNavController().navigate(R.id.action_profileFragment2_to_settingsFragment)
+            }
+            logout.setOnClickListener {
+                requireContext().getSharedPreferences(Object.USER_PREF_NAME, Context.MODE_PRIVATE)
+                    .edit().run {
+                        remove(Object.USER_PRIMARY_KEY)
+                        apply()
+
+                        findNavController().navigate(R.id.action_profileFragment2_to_loginActivity)
+                        activity?.finish()
+                    }
             }
         }
     }

@@ -37,6 +37,11 @@
         <action
             android:id="@+id/action_profileFragment2_to_profileSetupFragment2"
             app:destination="@id/profileSetupFragment2" />
+        <action
+            android:id="@+id/action_profileFragment2_to_loginActivity"
+            app:destination="@id/loginActivity"
+            app:popUpTo="@id/login_nav_graph"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -105,4 +110,9 @@
         android:name="kodecamp.android.na_my_work.ui.ui.profile.ProfileSetupFragment"
         android:label="fragment_profile_setup"
         tools:layout="@layout/fragment_profile_setup" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="kodecamp.android.na_my_work.ui.activities.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>
