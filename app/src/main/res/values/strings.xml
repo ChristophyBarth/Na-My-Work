@@ -181,5 +181,6 @@
     <string name="invalid_email">Invalid email</string>
     <string name="enter_a_4_digit_one_time_password_for_authentication">Enter a 4-digit one-time password for authentication.</string>
     <string name="passwords_don_t_match">Passwords don\'t match.</string>
+    <string name="description">Managing, designing, developing, creating and maintaining construction projects. Conducting onsite project investigations and analyzing data.</string>
 
 </resources>

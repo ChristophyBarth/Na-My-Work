@@ -74,7 +74,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@id/imageView"
-            tools:text="Managing, designing, developing, creating and maintaining construction projects. Conducting onsite project investigations and analyzing data." />
+            tools:text="@string/description" />
 
         <TextView
             android:id="@+id/rating"
