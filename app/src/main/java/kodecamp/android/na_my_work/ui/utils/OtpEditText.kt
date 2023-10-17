@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.ActionMode
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
+import androidx.core.content.withStyledAttributes
 import kodecamp.android.na_my_work.R
 
 
@@ -15,7 +16,7 @@ class OtpEditText : AppCompatEditText {
     private var mSpace = 24f //24 dp by default, space between the lines
     private var mNumChars = 4f
     private var mLineSpacing = 8f //8dp by default, height of the text from our lines
-    private val mMaxLength = 4
+    private var mMaxLength = 0
     private var mLineStroke = 2f
     private var mLinesPaint: Paint? = null
     private var mClickListener: OnClickListener? = null
@@ -32,6 +33,10 @@ class OtpEditText : AppCompatEditText {
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
+        context.withStyledAttributes(attrs, R.styleable.OtpEditText) {
+            mMaxLength = getInt(R.styleable.OtpEditText_linesCount, 4)
+        }
+
         val multi = context.resources.displayMetrics.density
         mLineStroke *= multi
         mLinesPaint = Paint(paint)

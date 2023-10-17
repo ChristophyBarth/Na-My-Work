@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Notification(
-    @Json(name = "messages") val messages: Boolean = false,
-    @Json(name = "viewedProfile") val viewedProfile: Boolean = false,
-    @Json(name = "nothing") val nothing: Boolean = false
+    @Json(name = "messages") var messages: Boolean = false,
+    @Json(name = "viewedProfile") var viewedProfile: Boolean = false,
+    @Json(name = "nothing") var nothing: Boolean = false
 )

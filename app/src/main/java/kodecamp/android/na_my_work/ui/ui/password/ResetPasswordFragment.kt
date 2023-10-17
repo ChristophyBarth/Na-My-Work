@@ -7,16 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import kodecamp.android.na_my_work.R
 import kodecamp.android.na_my_work.databinding.FragmentResetPasswordBinding
+import kodecamp.android.na_my_work.ui.ui.onboarding.OnboardingViewModel
+import kodecamp.android.na_my_work.ui.utils.Object
+import kodecamp.android.na_my_work.ui.utils.Resource
 
 class ResetPasswordFragment : Fragment() {
 
     private var _binding: FragmentResetPasswordBinding? = null
     private val binding get() = _binding!!
 
-    //    private val viewModel: OnboardingViewModel by activityViewModels()
+        private val viewModel: OnboardingViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -27,6 +32,28 @@ class ResetPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        textFieldsSetup()
+        clickListener()
+
+        viewModel.updateState.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is Resource.Error -> {
+                    Snackbar.make(
+                        binding.root,
+                        "Password reset failed",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+
+                is Resource.Success -> {
+                    findNavController().navigate(R.id.action_resetPasswordFragment_to_completeResetPasswordFragment)
+                }
+                else -> {}
+            }
+        }
+    }
+
+    private fun textFieldsSetup(){
         val textFields = listOf(binding.etPassword, binding.etConfirmPassword)
         textFields.forEach { textInputEditText ->
             textInputEditText.addTextChangedListener(object : TextWatcher {
@@ -70,14 +97,18 @@ class ResetPasswordFragment : Fragment() {
 
             })
         }
+    }
 
+    private fun clickListener(){
         binding.btnResetPassword.setOnClickListener {
-            //TODO("Uncomment Code to reset user's password")
-            /*val user = Object.user
-            user.password = binding.etConfirmPassword.text.toString()
+            val user = Object.user
+            user!!.password = binding.etConfirmPassword.text.toString()
 
-            viewModel.saveUserInformation(user!!)*/
-            findNavController().navigate(R.id.action_resetPasswordFragment_to_completeResetPasswordFragment)
+            viewModel.updateUserInformation(user)
+        }
+
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
         }
     }
 }

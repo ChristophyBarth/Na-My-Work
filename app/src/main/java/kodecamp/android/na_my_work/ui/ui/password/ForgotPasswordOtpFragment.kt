@@ -59,6 +59,10 @@ class ForgotPasswordOtpFragment : Fragment() {
             displayEmailNotification()
         }
 
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.btnSendCode.setOnClickListener {
             if (binding.otpView.text.toString().toInt() == otp) {
                 findNavController().navigate(R.id.action_forgotPasswordOtpFragment_to_resetPasswordFragment)

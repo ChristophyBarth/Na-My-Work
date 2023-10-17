@@ -17,6 +17,8 @@ import kodecamp.android.na_my_work.ui.utils.Object
 import kodecamp.android.na_my_work.ui.utils.Object.USER_PREF_NAME
 import kodecamp.android.na_my_work.ui.utils.Object.USER_PRIMARY_KEY
 import kodecamp.android.na_my_work.ui.utils.Resource
+import java.util.Locale
+
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
@@ -54,7 +56,7 @@ class LoginFragment : Fragment() {
         })
 
         binding.btnSignIn.setOnClickListener {
-            val email = binding.etEmail.text.toString()
+            val email = binding.etEmail.text.toString().lowercase(Locale.getDefault())
             val password = binding.etPassword.text.toString()
             viewModel.login(email, password)
         }

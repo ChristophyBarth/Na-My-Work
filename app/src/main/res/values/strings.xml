@@ -5,13 +5,15 @@
     <string name="send_a_message">Send a message</string>
     <string name="personal_information">Personal Information</string>
     <string name="full_name">Full Name:</string>
-    <string name="full_namee">Full Name <font color="#F1214A">*</font></string>
+    <string name="full_name_asterisk">Full Name <font color="#F1214A">*</font></string>
     <string name="email_address">Email Address:</string>
-    <string name="email_addresss">Email Address <font color="#F1214A">*</font></string>
+    <string name="email_address_asterisk">Email Address <font color="#F1214A">*</font></string>
     <string name="date_of_birth">Date Of Birth:</string>
-    <string name="date_of_birthh">Date Of Birth <font color="#F1214A">*</font></string>
+    <string name="date_of_birth_asterisk">Date Of Birth <font color="#F1214A">*</font></string>
     <string name="country_of_residence">Country of Residence:</string>
+    <string name="country_of_residence_asterisk">Country of Residence <font color="#F1214A">*</font></string>
     <string name="state_city_of_residence">State/City of Residence:</string>
+    <string name="state_city_of_residence_asterisk">State/City of Residence <font color="#F1214A">*</font></string>
     <string name="phone_number">Phone Number:</string>
     <string name="work_experience">Work Experience</string>
     <string name="resume">Resume</string>
@@ -95,13 +97,13 @@
     <string name="discover_service_providers">Discover service providers</string>
     <string name="filter">Filter</string>
     <string name="explore_awesome_professional_services">Explore awesome professional services</string>
-    <string name="view_profile">View profile</string>
+    <string name="view_profile">View Profile</string>
     <string name="write_a_short_brief_about_yourself_and_your_working_experience">Write a short brief about yourself and your working experience</string>
     <string name="save_continue"><![CDATA[Save & Continue]]></string>
     <string name="enter_your_country_of_residence">Enter your country of residence</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="enter_full_legal_name">Enter full legal name</string>
-    <string name="phone_numberr">Phone number <font color="#F1214A">*</font></string>
+    <string name="phone_number_asterisk">Phone number <font color="#F1214A">*</font></string>
     <string name="dd_mm_yy">DD/MM/YY</string>
     <string name="enter_state_of_residence">Enter state of residence</string>
     <string name="about_me">About me</string>
@@ -182,5 +184,28 @@
     <string name="enter_a_4_digit_one_time_password_for_authentication">Enter a 4-digit one-time password for authentication.</string>
     <string name="passwords_don_t_match">Passwords don\'t match.</string>
     <string name="description">Managing, designing, developing, creating and maintaining construction projects. Conducting onsite project investigations and analyzing data.</string>
+    <string name="user_adapter_address">%1$s, %2$s</string>
+    <string name="user_adapter_rating">%1$s (%2$s)</string>
+    <string name="profile_till_present">%1$s - till present</string>
+    <string name="experience_duration">%1$s - %2$s</string>
+    <string name="experience_work_title_and_company_name">%1$s | %2$s</string>
+    <string name="ratings">Ratings</string>
+    <string name="hi_username">Hi, %1$s</string>
+    <string name="username_resume_pdf">%1$s\'s resume.pdf</string>
+    <string name="mmmm_yyyy">MMMM yyyy</string>
+    <string name="create_a_6_digit_pin_that_you_can_remember">Create a 6-digit pin that you can remember</string>
+    <string name="confirm_your_pin">Confirm your pin</string>
+    <string name="two_step_verification_has_been_turned_on">Two-step verification has been turned on</string>
+    <string name="done">Done</string>
+    <string name="are_you_sure_you_want_to_delete_your_account_from_na_my_work">Are you sure you want to delete your account from Na-My-Work?</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="got_it">GOT IT</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="please_check_the_mail_sent_to_and_follow_the_instructions_to_reset_password">Please check the mail sent to:%1$s and follow the instructions to reset password</string>
+    <string name="email_notification">Email Notification</string>
+    <string name="sorry_we_could_not_save_your_settings_at_this_time">Sorry, we could not save your settings at this time.</string>
+    <string name="password_incorrect">Password incorrect</string>
+    <string name="password_change_failed">Password change failed</string>
+    <string name="success">Success</string>
 
 </resources>

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment2_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_categoryInfoFragment"
+            app:destination="@id/categoryInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment2"
@@ -35,13 +38,13 @@
             android:id="@+id/action_profileFragment2_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_profileFragment2_to_profileSetupFragment2"
-            app:destination="@id/profileSetupFragment2" />
-        <action
             android:id="@+id/action_profileFragment2_to_loginActivity"
             app:destination="@id/loginActivity"
             app:popUpTo="@id/login_nav_graph"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_profileFragment2_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -60,6 +63,12 @@
         <action
             android:id="@+id/action_settingsFragment_to_reportProblemFragment2"
             app:destination="@id/reportProblemFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
     </fragment>
     <fragment
         android:id="@+id/notificationsSettingsFragment"
@@ -85,7 +94,11 @@
         android:id="@+id/userProfileFragment"
         android:name="kodecamp.android.na_my_work.ui.ui.profile.UserProfileFragment"
         android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" />
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_profileSetupFragment2"
+            app:destination="@id/profileSetupFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/categoryInfoFragment"
         android:name="kodecamp.android.na_my_work.ui.ui.category.CategoryInfoFragment"
@@ -99,7 +112,13 @@
         android:id="@+id/deleteFragment"
         android:name="kodecamp.android.na_my_work.ui.ui.profile.DeleteFragment"
         android:label="fragment_delete"
-        tools:layout="@layout/fragment_delete" />
+        tools:layout="@layout/fragment_delete" >
+        <action
+            android:id="@+id/action_deleteFragment_to_loginActivity"
+            app:destination="@id/loginActivity"
+            app:popUpTo="@id/login_nav_graph"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="kodecamp.android.na_my_work.ui.ui.password.ChangePasswordFragment"

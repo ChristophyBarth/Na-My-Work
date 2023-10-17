@@ -66,23 +66,41 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-
-    <TextView
-        android:id="@+id/extra_security_tv"
+    <ViewFlipper
+        android:id="@+id/viewSwitcher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:drawablePadding="30dp"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:text="@string/for_extra_security_turn_on_two_step_verification_which_will_require_a_pin_when_registering_your_email_with_na_my_work"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:drawableTopCompat="@drawable/verify" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/extra_security_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawablePadding="30dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="@string/for_extra_security_turn_on_two_step_verification_which_will_require_a_pin_when_registering_your_email_with_na_my_work"
+            android:textAlignment="center"
+            app:drawableTopCompat="@drawable/verify" />
+
+
+        <include
+            android:id="@+id/otp"
+            layout="@layout/two_step_otp_item"/>
+
+        <include
+            android:id="@+id/otp_confirm"
+            layout="@layout/two_step_otp_item"/>
+
+    </ViewFlipper>
+
+
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_save"
+        android:id="@+id/turnOnButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
@@ -93,7 +111,7 @@
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/extra_security_tv"
+        app:layout_constraintTop_toBottomOf="@id/viewSwitcher"
         app:shapeAppearance="@style/ThemeOverlay.Material3.Button" />
 
 

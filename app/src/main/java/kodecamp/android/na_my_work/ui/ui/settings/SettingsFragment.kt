@@ -40,6 +40,15 @@ class SettingsFragment : Fragment() {
             reportAProblem.setOnClickListener {
                 findNavController().navigate(R.id.action_settingsFragment_to_reportProblemFragment2)
             }
+            passwordReset.setOnClickListener {
+                findNavController().navigate(R.id.action_settingsFragment_to_changePasswordFragment)
+            }
+            deleteAcct.setOnClickListener {
+                findNavController().navigate(R.id.action_settingsFragment_to_deleteFragment)
+            }
+            binding.backButton.setOnClickListener {
+                findNavController().navigateUp()
+            }
         }
     }
 }
