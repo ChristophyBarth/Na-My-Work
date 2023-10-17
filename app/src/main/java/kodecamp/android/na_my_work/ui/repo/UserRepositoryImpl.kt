@@ -20,12 +20,16 @@ class UserRepositoryImpl @Inject constructor(
         return userDao.getUserById(id)
     }
 
-    override suspend fun saveUser(userEntity: UserEntity) {
-        userDao.saveUser(userEntity)
+    override suspend fun saveUser(userEntity: UserEntity): Long {
+        return userDao.saveUser(userEntity)
     }
 
-    override suspend fun updateUser(user: UserEntity) {
-        userDao.updateUser(user)
+    override suspend fun updateUser(user: UserEntity): Int {
+        return userDao.updateUser(user)
+    }
+
+    override suspend fun deleteUser(user: UserEntity): Int {
+        return userDao.deleteUser(user)
     }
 
 }

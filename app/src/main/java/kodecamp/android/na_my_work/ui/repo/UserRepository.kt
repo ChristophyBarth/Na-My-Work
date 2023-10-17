@@ -8,7 +8,9 @@ interface UserRepository {
 
     suspend fun getUserByID(id: Int): UserEntity?
 
-    suspend fun saveUser(userEntity: UserEntity)
+    suspend fun saveUser(userEntity: UserEntity) : Long
 
-    suspend fun updateUser(user: UserEntity)
+    suspend fun updateUser(user: UserEntity) : Int
+
+    suspend fun deleteUser(user: UserEntity) : Int
 }

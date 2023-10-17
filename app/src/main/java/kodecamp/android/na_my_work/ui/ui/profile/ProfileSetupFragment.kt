@@ -10,6 +10,7 @@ import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import kodecamp.android.na_my_work.R
 import kodecamp.android.na_my_work.databinding.FragmentProfileSetupBinding
@@ -48,10 +49,9 @@ class ProfileSetupFragment : Fragment() {
         )
 
         binding.tabLayout.apply {
-
-            for (view in this.touchables) {
+            /*for (view in this.touchables) {
                 view.isEnabled = false
-            }
+            }*/
 
             getTabAt(0)?.customView.apply {
                 this?.findViewById<TextView>(R.id.form_indicator_text)?.apply {
@@ -86,6 +86,10 @@ class ProfileSetupFragment : Fragment() {
                             )
                         )
                     }
+
+                    if (tab != null) {
+                        binding.viewpager.setCurrentItem(tab.position, true)
+                    }
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -105,15 +109,20 @@ class ProfileSetupFragment : Fragment() {
     }
 
     private fun setUpViewPager() {
-        val myViewPagerAdapter =
-            MyViewPagerAdapter(
-                fragmentActivity = requireActivity()
-            )
+        val myViewPagerAdapter = MyViewPagerAdapter(
+            fragmentActivity = requireActivity()
+        )
         myViewPagerAdapter.addFragment(ProfileBioDataFragment())
         myViewPagerAdapter.addFragment(WorkExperienceFragment())
         myViewPagerAdapter.addFragment(MediaFragment())
         binding.viewpager.adapter = myViewPagerAdapter
-        binding.viewpager.isUserInputEnabled = false
+
+        binding.viewpager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
+            }
+        })
     }
 
     class MyViewPagerAdapter(fragmentActivity: FragmentActivity) :
@@ -125,5 +134,11 @@ class ProfileSetupFragment : Fragment() {
 
         override fun getItemCount(): Int = fragmentList.size
         override fun createFragment(position: Int): Fragment = fragmentList[position]
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        _binding = null
     }
 }

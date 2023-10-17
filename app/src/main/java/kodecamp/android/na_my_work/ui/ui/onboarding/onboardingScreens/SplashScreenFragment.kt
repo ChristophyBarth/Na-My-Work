@@ -49,6 +49,7 @@ class SplashScreenFragment : Fragment() {
         if (completedOnboarding && userPrimaryKey != -1) {
             Object.primaryKey = userPrimaryKey
             viewModel.retrieveUserById(userPrimaryKey)
+
         } else if (completedOnboarding) {
             nextFragmentRunnable = Runnable {
                 findNavController().navigate(R.id.action_splashScreenFragment_to_onboardFragment)
@@ -66,9 +67,11 @@ class SplashScreenFragment : Fragment() {
                 is Resource.Success -> {
                     val user = response.data
                     Object.user = user
+                    Object.primaryKey = user!!.userId
 
                     nextFragmentRunnable = Runnable {
                         findNavController().navigate(R.id.action_splashScreenFragment_to_homeActivity)
+                        activity?.finish()
                     }
                     handler.postDelayed(nextFragmentRunnable, 2000)
                 }

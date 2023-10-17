@@ -79,7 +79,9 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signupFragment"
-            app:destination="@id/signupFragment" />
+            app:destination="@id/signupFragment"
+            app:popUpTo="@id/onboardFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
@@ -97,7 +99,9 @@
         tools:layout="@layout/fragment_signup">
         <action
             android:id="@+id/action_signupFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/onboardFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -125,7 +129,7 @@
         <action
             android:id="@+id/action_completeResetPasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/login_nav_graph"
+            app:popUpTo="@id/onboardFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment

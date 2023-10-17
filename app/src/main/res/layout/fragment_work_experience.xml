@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.profile.WorkExperienceFragment">
+    tools:context=".ui.ui.profile.WorkExperienceFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -288,7 +288,6 @@
         android:layout_marginBottom="16dp"
         android:padding="18dp"
         app:cornerRadius="10dp"
-        android:backgroundTint="@color/green"
         android:text="@string/save_continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"

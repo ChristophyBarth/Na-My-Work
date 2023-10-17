@@ -28,7 +28,7 @@ class ProfileFragment : Fragment() {
 
         binding.apply {
             profile.setOnClickListener {
-                findNavController().navigate(R.id.action_profileFragment2_to_profileSetupFragment2)
+                findNavController().navigate(R.id.action_profileFragment2_to_userProfileFragment)
             }
             settings.setOnClickListener {
                 findNavController().navigate(R.id.action_profileFragment2_to_settingsFragment)
@@ -39,6 +39,8 @@ class ProfileFragment : Fragment() {
                         remove(Object.USER_PRIMARY_KEY)
                         apply()
 
+                        Object.primaryKey = null
+                        Object.user = null
                         findNavController().navigate(R.id.action_profileFragment2_to_loginActivity)
                         activity?.finish()
                     }

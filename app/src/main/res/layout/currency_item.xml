@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/currency"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="10dp"
-    android:textSize="12sp"
     android:layout_margin="10dp"
-    android:textColor="@color/black"
-    android:textSelectHandleRight="@drawable/tick_circle"
     android:fontFamily="@font/source_sans_pro_bold"
-    tools:text="Nigerian Naira-" />
+    android:padding="5dp"
+    android:textColor="@color/black"
+    android:textSize="12sp"
+    tools:text="Nigerian Naira-"/>

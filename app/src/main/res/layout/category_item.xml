@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="170dp"
-        android:layout_height="120dp"
-        android:layout_margin="10dp">
+        android:layout_width="165dp"
+        android:layout_height="115dp"
+        android:layout_marginVertical="15dp"
+        android:layout_marginHorizontal="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/user_item_img_background">
 
         <ImageView
             android:id="@+id/category_image"
             android:layout_width="170dp"
             android:layout_height="120dp"
             android:background="@drawable/category_item_img_background"
-            android:src="@mipmap/ic_launcher"
             android:contentDescription="@string/category"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:background="@color/black"/>
+
 
         <TextView
             android:id="@+id/category_name"
@@ -27,13 +35,12 @@
             android:layout_marginHorizontal="10dp"
             android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center"
-            android:textSize="17sp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Recreational Services" />
+            tools:text="Engineering &amp; Construction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</layout>

@@ -52,7 +52,7 @@
         android:layout_height="307dp"
         android:layout_marginTop="43dp"
         android:contentDescription="@string/app_logo"
-        android:src="@drawable/group_842__1_"
+        android:src="@drawable/group_842"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_skip" />

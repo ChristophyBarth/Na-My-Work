@@ -1,72 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".ui.ui.profile.UserProfileFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_arrow_back" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans_semibold"
+                android:text="@string/view_profile"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:contentInsetStart="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp">
-
-                    <ImageButton
-                        android:id="@+id/backButton"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/back"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/baseline_arrow_back" />
-
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/work_sans_semibold"
-                        android:text="@string/view_profile"
-                        android:textColor="@color/green"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/backButton"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.appcompat.widget.Toolbar>
-
-
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/profileImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/user_item_img_background"
-                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/user_profile_picture"
+                android:src="@drawable/ic_profile_placeholder"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/toolbar"
-                android:contentDescription="@string/user_profile_picture" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/name"
@@ -79,8 +82,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/job"
                 app:layout_constraintEnd_toStartOf="@id/sendAMessage"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@id/imageView"
-                app:layout_constraintTop_toTopOf="@id/imageView"
+                app:layout_constraintStart_toEndOf="@id/profileImage"
+                app:layout_constraintTop_toTopOf="@id/profileImage"
                 tools:text="Christophy Barth" />
 
             <TextView
@@ -130,14 +133,14 @@
                 android:layout_marginEnd="20dp"
                 android:drawablePadding="5dp"
                 android:gravity="start|center_vertical"
+                android:text="@string/ratings"
                 android:textAlignment="gravity"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@id/rating"
                 app:layout_constraintEnd_toStartOf="@+id/rating"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/name"
-                app:layout_constraintTop_toTopOf="@id/rating"
-                tools:text="Ratings" />
+                app:layout_constraintTop_toTopOf="@id/rating" />
 
             <TextView
                 android:id="@+id/rating"
@@ -149,7 +152,7 @@
                 android:textAlignment="gravity"
                 android:textSize="13sp"
                 app:drawableStartCompat="@drawable/ic_star"
-                app:layout_constraintBottom_toBottomOf="@id/imageView"
+                app:layout_constraintBottom_toBottomOf="@id/profileImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/ratings_title"
@@ -174,7 +177,6 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="15dp"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@id/description" />
@@ -193,12 +195,6 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="15dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_bottom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" />
-
             <TextView
                 android:id="@+id/personal_info_title"
                 android:layout_width="0dp"
@@ -211,7 +207,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/guideline_bottom" />
+                app:layout_constraintTop_toBottomOf="@id/divider" />
 
             <TextView
                 android:id="@+id/full_name_title"
@@ -376,7 +372,7 @@
                 app:layout_constraintTop_toBottomOf="@id/phone_number" />
 
             <TextView
-                android:id="@+id/job_title"
+                android:id="@+id/work_experience_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/source_sans_pro"
@@ -388,7 +384,7 @@
                 tools:text="Site Supervisor Engineer | Klovaharris Limited Lekki" />
 
             <TextView
-                android:id="@+id/job_duration"
+                android:id="@+id/work_experience_duration"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -396,11 +392,11 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/job_title"
+                app:layout_constraintTop_toBottomOf="@id/work_experience_title"
                 tools:text="September 2020 - till present" />
 
             <TextView
-                android:id="@+id/job_description"
+                android:id="@+id/work_experience_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -408,7 +404,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/job_duration"
+                app:layout_constraintTop_toBottomOf="@id/work_experience_duration"
                 tools:text="I plan, organize  and control projects. I also supervise sub-contractors and staff." />
 
 
@@ -424,26 +420,28 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/job_description" />
+                app:layout_constraintTop_toBottomOf="@id/work_experience_description" />
 
             <View
                 android:id="@+id/document_view"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
                 android:background="@drawable/document_view_background"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
+
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@id/resume_title" />
 
             <ImageView
                 android:id="@+id/document_icon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/document_icon"
                 android:src="@drawable/ic_document"
+                android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="@id/document_view"
                 app:layout_constraintHorizontal_bias="0.5"
-                android:contentDescription="@string/document_icon"
                 app:layout_constraintStart_toStartOf="@id/document_view"
                 app:layout_constraintTop_toBottomOf="@+id/resume_title" />
 
@@ -452,7 +450,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pdf"
-                android:textSize="20sp"
+                android:textSize="18sp"
+                android:textColor="@color/light_ash"
                 app:layout_constraintBottom_toBottomOf="@+id/document_view"
                 app:layout_constraintEnd_toEndOf="@id/document_view"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -511,7 +510,8 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/search_view_background"
                 android:padding="15dp"
-                android:textSize="20sp"
+                android:textColor="@color/green"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@id/link_title"
@@ -535,6 +535,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15sp"
+                tools:listitem="@layout/photo_item"
                 android:src="@mipmap/ic_launcher"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -591,7 +592,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="15sp"
                 android:src="@mipmap/ic_launcher"
+                tools:listitem="@layout/soft_skill_item"
                 app:layout_constraintBottom_toBottomOf="parent"
+                tools:itemCount="2"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@id/soft_skill_title" />
@@ -601,4 +604,4 @@
 
     </androidx.core.widget.NestedScrollView>
 
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

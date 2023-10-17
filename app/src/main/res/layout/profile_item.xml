@@ -1,123 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp">
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/ic_placeholder"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/source_sans_pro_bold"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/job"
-            app:layout_constraintEnd_toStartOf="@+id/likeButton"
-            app:layout_constraintStart_toEndOf="@id/imageView"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Christophy Barth" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/user_item_img_background"
+        android:contentDescription="@string/user_profile_picture"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
-        <ImageButton
-            android:id="@+id/likeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_favorite"
-            app:layout_constraintBottom_toBottomOf="@+id/name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/name" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/job"
+        app:layout_constraintEnd_toStartOf="@+id/likeButton"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Christophy Barth" />
 
-        <TextView
-            android:id="@+id/job"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/address"
-            app:layout_constraintStart_toStartOf="@id/name"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="Android Engineer" />
+    <ImageButton
+        android:id="@+id/likeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_favorite"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toTopOf="@+id/name" />
 
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:textAlignment="gravity"
-            android:textSize="13sp"
-            app:drawableStartCompat="@drawable/ic_location"
-            app:layout_constraintBottom_toBottomOf="@id/imageView"
-            app:layout_constraintStart_toStartOf="@id/name"
-            app:layout_constraintTop_toBottomOf="@+id/job"
-            tools:text="Lagos, Nigeria" />
+    <TextView
+        android:id="@+id/job"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/address"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:text="Android Engineer" />
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/imageView"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
-            tools:text="@string/description" />
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textAlignment="gravity"
+        android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@+id/job"
+        tools:text="Lagos, Nigeria" />
 
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="5dp"
-            android:gravity="start|center_vertical"
-            android:textSize="13sp"
-            app:drawableStartCompat="@drawable/ic_star"
-            app:layout_constraintBottom_toBottomOf="@+id/address"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/job"
-            tools:text="5.0  (78)" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:text="@string/description" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/cancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/source_sans_pro_bold"
-            android:text="@string/view_profile"
-            android:textAllCaps="false"
-            android:textColor="@color/green"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:cornerRadius="4dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description"
-            app:strokeColor="@color/green"
-            app:strokeWidth="2dp" />
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:gravity="start|center_vertical"
+        android:textSize="13sp"
+        app:drawableStartCompat="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/address"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toTopOf="@+id/job"
+        tools:text="5.0  (78)" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/imageView" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:text="@string/view_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:strokeColor="@color/green"
+        app:strokeWidth="2dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

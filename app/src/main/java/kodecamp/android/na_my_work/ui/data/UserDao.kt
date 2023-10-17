@@ -11,11 +11,11 @@ import kodecamp.android.na_my_work.ui.model.UserEntity
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveUser(userEntity: UserEntity)
+    suspend fun saveUser(userEntity: UserEntity) : Long
     @Delete
-    suspend fun deleteUser(userEntity: UserEntity)
+    suspend fun deleteUser(userEntity: UserEntity) : Int
     @Update
-    suspend fun updateUser(userEntity: UserEntity)
+    suspend fun updateUser(userEntity: UserEntity) : Int
 
     @Query("SELECT * FROM userInfo WHERE userId = :userId")
     suspend fun getUserById(userId: Int): UserEntity?

@@ -10,9 +10,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import kodecamp.android.na_my_work.R
 import kodecamp.android.na_my_work.databinding.FragmentSignupBinding
+import kodecamp.android.na_my_work.ui.model.Notification
 import kodecamp.android.na_my_work.ui.model.UserEntity
+import kodecamp.android.na_my_work.ui.utils.Object.isNamePatternCorrect
+import kodecamp.android.na_my_work.ui.utils.Resource
+import java.util.Locale
 
 class SignupFragment : Fragment() {
     private var _binding: FragmentSignupBinding? = null
@@ -30,8 +35,27 @@ class SignupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnCreateAcct = binding.btnCreateAcct
-        btnCreateAcct.isEnabled = false
+        textFieldsSetup()
+        clickListeners()
+
+        viewModel.saveState.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is Resource.Success -> {
+                    findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+                }
+
+                is Resource.Error -> {
+                    Snackbar.make(binding.root, response.message.toString(), Snackbar.LENGTH_SHORT)
+                        .show()
+                }
+
+                is Resource.Loading -> {}
+            }
+        }
+    }
+
+    private fun textFieldsSetup() {
+        binding.btnCreateAcct.isEnabled = false
 
         val textFields = listOf(
             binding.etName, binding.etEmail, binding.etPassword
@@ -82,23 +106,31 @@ class SignupFragment : Fragment() {
                             getString(R.string.include_numbers_or_special_characters)
                     }
 
-                    btnCreateAcct.isEnabled = namePatternCorrect && EMAIL_ADDRESS.matcher(email)
-                        .matches() && hasCapitalLetter && hasNumberOrSpecialCharacter && password.length >= 8
+                    binding.btnCreateAcct.isEnabled =
+                        namePatternCorrect && EMAIL_ADDRESS.matcher(email)
+                            .matches() && hasCapitalLetter && hasNumberOrSpecialCharacter && password.length >= 8
                 }
 
                 override fun afterTextChanged(s: Editable?) {}
             })
         }
+    }
 
+    private fun clickListeners() {
         binding.btnCreateAcct.setOnClickListener {
 
             val fullName = binding.etName.text.toString()
-            val email = binding.etEmail.text.toString()
+            val email = binding.etEmail.text.toString().lowercase(Locale.getDefault())
             val password = binding.etPassword.text.toString()
-            val signup = UserEntity(userId = 0, fullName, email, password)
+            val signup = UserEntity(
+                userId = 0, fullName, email, password, appNotification = Notification(
+                    messages = true, viewedProfile = false, nothing = false
+                ), emailNotification = Notification(
+                    messages = false, viewedProfile = true, nothing = false
+                )
+            )
 
             viewModel.saveUserInformation(signup)
-            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
         }
 
         binding.tvSignIn.setOnClickListener {
@@ -111,11 +143,6 @@ class SignupFragment : Fragment() {
         val hasNumberOrSpecialCharacter = password.any { it.isDigit() || !it.isLetterOrDigit() }
 
         return hasCapitalLetter && hasNumberOrSpecialCharacter && password.length >= 8
-    }
-
-    private fun isNamePatternCorrect(fullName: String): Boolean {
-
-        return fullName.matches(Regex("^[A-Za-z ]+\$"))
     }
 
     override fun onDestroyView() {

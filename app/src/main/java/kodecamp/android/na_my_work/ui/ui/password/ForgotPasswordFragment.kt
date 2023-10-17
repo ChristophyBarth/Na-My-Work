@@ -98,6 +98,10 @@ class ForgotPasswordFragment : Fragment() {
             viewModel.retrieveUserByEmail(email = binding.etEmail.text.toString())
         }
 
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
         viewModel.forgotPasswordState.observe(viewLifecycleOwner) { content ->
             content.getContentIfNotHandled().let { response ->
                 when (response) {
@@ -124,12 +128,16 @@ class ForgotPasswordFragment : Fragment() {
 
     private fun showDialog() {
         val dialog = AlertDialog.Builder(requireContext())
-        dialog.setTitle("Reset Password")
-        dialog.setMessage("Please check the mail sent to:${binding.etEmail.text.toString()} and follow the instructions to reset password")
+        dialog.setTitle(getString(R.string.reset_password))
+        dialog.setMessage(
+            getString(
+                R.string.please_check_the_mail_sent_to_and_follow_the_instructions_to_reset_password,
+                binding.etEmail.text.toString()
+            ))
 
         val alertDialog = dialog.create()
         alertDialog.setButton(
-            DialogInterface.BUTTON_POSITIVE, "GOT IT"
+            DialogInterface.BUTTON_POSITIVE, getString(R.string.got_it)
         ) { _, _ ->
             displayEmailNotification()
             val bundle = Bundle()
@@ -167,7 +175,7 @@ class ForgotPasswordFragment : Fragment() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(id, "Email Notification", importance).apply {
+            val channel = NotificationChannel(id, getString(R.string.email_notification), importance).apply {
                 description = "Email OTP"
             }
 

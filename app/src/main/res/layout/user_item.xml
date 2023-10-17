@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="5dp">
+    android:layout_marginVertical="7.5dp">
 
     <ImageView
         android:id="@+id/imageView"
@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:contentDescription="@string/user_profile_picture"
         android:background="@drawable/user_item_img_background"
-        android:src="@mipmap/ic_launcher"
+        tools:src="@tools:sample/avatars"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,18 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/source_sans_pro_bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        tools:text="@tools:sample/full_names"
         app:layout_constraintBottom_toTopOf="@+id/job"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Christophy Barth" />
+        />
 
     <TextView
         android:id="@+id/job"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/name"
@@ -48,13 +50,14 @@
         android:gravity="center_vertical"
         android:textAlignment="gravity"
         android:textSize="13sp"
+        android:layout_marginBottom="5dp"
         app:drawableStartCompat="@drawable/ic_location"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/name"
         app:layout_constraintTop_toBottomOf="@+id/job"
-        tools:text="Lagos, Nigeria" />
+        tools:text="@tools:sample/cities" />
 
     <TextView
         android:id="@+id/description"
@@ -94,7 +97,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description"
-        tools:text="View Profile" />
+        android:text="@string/view_profile" />
 
     <View
         android:id="@+id/divider"
