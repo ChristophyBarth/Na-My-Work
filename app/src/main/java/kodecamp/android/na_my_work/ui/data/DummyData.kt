@@ -657,4 +657,14 @@ class DummyData {
             "United Arab Emirates Dirham (AED)"
         )
     }
+        fun skills(): List<String> {
+            return mutableListOf(
+                "Team work",
+                "Collaboration",
+                "Communication",
+                "Fast learner",
+                "Technical analyst",
+                "Critical thinker",
+            )
+        }
 }
