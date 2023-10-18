@@ -128,7 +128,11 @@
         android:id="@+id/profileSetupFragment2"
         android:name="kodecamp.android.na_my_work.ui.ui.profile.ProfileSetupFragment"
         android:label="fragment_profile_setup"
-        tools:layout="@layout/fragment_profile_setup" />
+        tools:layout="@layout/fragment_profile_setup" >
+        <action
+            android:id="@+id/action_profileSetupFragment2_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="kodecamp.android.na_my_work.ui.activities.LoginActivity"

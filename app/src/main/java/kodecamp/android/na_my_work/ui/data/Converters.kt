@@ -23,8 +23,8 @@ class Converters {
     private val notificationObjectMoshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).add(StringJsonAdapter).build()
     private val notificationObjectListAdapter: JsonAdapter<Notification> = notificationObjectMoshi.adapter(Notification::class.java)
 
-    private val workExperienceMoshi = Moshi.Builder().build()
-    private val workExperienceListType: ParameterizedType = Types.newParameterizedType(MutableList::class.java, String::class.java, WorkExperience::class.java)
+    private val workExperienceMoshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    private val workExperienceListType: ParameterizedType = Types.newParameterizedType(MutableList::class.java, WorkExperience::class.java)
     private val workExperienceListAdapter: JsonAdapter<MutableList<WorkExperience>> = workExperienceMoshi.adapter(workExperienceListType)
 
     private val uriListMoshi = Moshi.Builder().build()

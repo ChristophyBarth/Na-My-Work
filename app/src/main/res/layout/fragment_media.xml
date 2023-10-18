@@ -167,38 +167,36 @@
         app:layout_constraintStart_toStartOf="@id/startGuideline"
         app:layout_constraintTop_toBottomOf="@id/softSkillsText" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/softSkillsContainer"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/softSkillsCardView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:boxBackgroundColor="@color/grey"
-        app:boxCornerRadiusBottomEnd="6dp"
-        app:boxCornerRadiusBottomStart="6dp"
-        app:boxCornerRadiusTopEnd="6dp"
-        app:boxCornerRadiusTopStart="6dp"
-        app:boxStrokeWidth="0dp"
-        app:layout_constraintEnd_toStartOf="@id/endGuideline"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintTop_toBottomOf="@id/softSkillsText2"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintTop_toBottomOf="@id/softSkillsText2">
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintBottom_toTopOf="@id/chipRecyclerView"
+        app:cardCornerRadius="4dp"
+        >
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/softSkillsEditText"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/source_sans_pro"
-            android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:singleSelection="true"
+        >
+        </com.google.android.material.chip.ChipGroup>
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chipRecyclerView"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/seeAllText"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintTop_toBottomOf="@id/softSkillsContainer"
+        app:layout_constraintTop_toBottomOf="@id/softSkillsCardView"
         tools:listitem="@layout/chip_item" />
 
     <TextView
@@ -215,6 +213,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
